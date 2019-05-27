@@ -1,33 +1,105 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+}
+.Wrapper {
+  margin: 2rem;
+  padding: 2rem;
+  border: 2px solid lightgray;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.Block-open {
+  background-color: red;
+
+  transition: background-color 2s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Block-closed {
+  background-color: blue;
+  transition: background-color 1s;
+}
+
+.AppearBlock-open {
+  opacity: 1;
+
+  transition: opacity 2s;
+}
+
+.AppearBlock-closed {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.UnmountBlock-open {
+  opacity: 1;
+
+  transition: opacity 2s;
+}
+
+.UnmountBlock-closed {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.ManualTransition-onMount {
+  opacity: 0;
+}
+
+.ManualTransition-show {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.ReactTransition-enter {
+  opacity: 0;
+}
+.ReactTransition-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+.ReactTransition-exit {
+  opacity: 1;
+}
+.ReactTransition-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+.TabBar {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid lightgray;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.TabBar a {
+  display: block;
+  padding: 1rem;
+  margin-right: 1rem;
+
+  border: 1px solid blue;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.TabBar a:hover {
+  text-decoration: underline;
+
+  background-color: lightblue;
+}
+
+.tab-enter {
+  opacity: 0;
+}
+
+.tab-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.tab-exit {
+  opacity: 1;
+}
+
+.tab-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms;
 }
