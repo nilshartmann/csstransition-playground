@@ -24,37 +24,36 @@ export default function TabBar() {
     <>
       <div className="TabBar">
         <Link to="/eins">Eins</Link>
+        <Route path="/eins">
+          {({ match }) => (
+            <CSSTransition
+              in={match != null}
+              timeout={1000}
+              classNames="tab"
+              unmountOnExit
+            >
+              <div className="tab">
+                <Eins />
+              </div>
+            </CSSTransition>
+          )}
+        </Route>
         <Link to="/zwei">Zwei</Link>
+        <Route path="/zwei">
+          {({ match }) => (
+            <CSSTransition
+              in={match != null}
+              timeout={1000}
+              classNames="tab"
+              unmountOnExit
+            >
+              <div className="tab">
+                <Zwei />
+              </div>
+            </CSSTransition>
+          )}
+        </Route>
       </div>
-      <Route path="/eins">
-        {({ match }) => (
-          <CSSTransition
-            in={match != null}
-            timeout={1000}
-            classNames="tab"
-            unmountOnExit
-          >
-            <div className="tab">
-              <Eins />
-            </div>
-          </CSSTransition>
-        )}
-      </Route>
-
-      <Route path="/zwei">
-        {({ match }) => (
-          <CSSTransition
-            in={match != null}
-            timeout={1000}
-            classNames="tab"
-            unmountOnExit
-          >
-            <div className="tab">
-              <Zwei />
-            </div>
-          </CSSTransition>
-        )}
-      </Route>
     </>
   );
 }
